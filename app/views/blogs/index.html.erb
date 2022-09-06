@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Blogs</h1>
+
+<div id="blogs">
+  <% @blogs.each do |blog| %>
+    <%= render blog %> <!-- AZ-35 Why do we have render here. What does it mean. learn more later.-->
+    <p>
+      <%= link_to "Show this blog", blog %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New blog", new_blog_path %> <!-- AZ-35 What is new_blog_path. What does it mean. learn more later.-->
