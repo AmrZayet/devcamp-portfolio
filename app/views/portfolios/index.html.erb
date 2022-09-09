@@ -8,4 +8,8 @@
   <p> <%= portfolio_item.body %></p>
   <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
   <%= link_to "Edit this portfolio", edit_portfolio_path(portfolio_item) %>
+
+<!-- The other 2 ways did not work. check the notes-->
+
+  <%= link_to "Delete Porfolio", portfolio_path(portfolio_item), data: { "turbo-method": :delete, confirm: 'Are you sure?'} %>
 <% end%>
