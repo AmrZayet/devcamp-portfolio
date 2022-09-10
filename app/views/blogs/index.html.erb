@@ -1,14 +1,50 @@
-<p style="color: green"><%= notice %></p>
+ <!-- <p style="color: green"><%= notice %></p>
 
 <h1>Blogs</h1>
 
 <div id="blogs">
   <% @blogs.each do |blog| %>
-    <%= render blog %> <!-- AZ-35 Why do we have render here. What does it mean. learn more later.-->
+    <%= render blog %>  AZ-35 Why do we have render here. What does it mean. learn more later.
     <p>
       <%= link_to "Show this blog", blog %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New blog", new_blog_path %> <!-- AZ-35 What is new_blog_path. What does it mean. learn more later.-->
+<%= link_to "New blog", new_blog_path %> <!-- AZ-35 What is new_blog_path. What does it mean. learn more later. -->
+
+<!-- At video 70 I commented the default of Rails 7 and added the course html from Rails 5 -->
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Blog Title</th>
+      <th>Body</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.body %></td>
+        <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
+        <td><%= link_to 'Show', blog %></td>
+        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+        <td><%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>
+
+
