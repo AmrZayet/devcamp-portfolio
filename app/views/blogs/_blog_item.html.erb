@@ -1,7 +1,8 @@
-<!-- This is created in Rails 7 to follow the video (this content should have been at /views/blogs/_blog.html.erb)
+<!-- This is created (at video 113) in Rails 7 to follow the video (this content should have been at /views/blogs/_blog.html.erb)
 In order to make this work like the video but without missing the rails 7 app, I created this: -->
 <tr>
   <td><%= blog_item.title %></td>
+  <td>Published <%= distance_of_time_in_words(blog_item.created_at, Time.now) %> ago</td>
   <td><%= blog_item.body %></td>
   <td><%= link_to blog_item.status, toggle_status_blog_path(blog_item) %></td>
   <td><%= link_to 'Show', blog_item %></td>
