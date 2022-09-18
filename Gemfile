@@ -70,6 +70,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 
 gem 'bootstrap', '~> 5.0.2'
 
-gem 'devcamp_view_tool_practice', git: "https://github.com/AmrZayet/devcamp_view_tool_practice"
+
+gem 'devcamp_view_tool_practice', '~> 0.1.0'
 
 
