@@ -7,4 +7,12 @@ enum status: { draft: 0, published: 1 }
   validates_presence_of :title, :body
 
   belongs_to :topic, optional: true
+
+  def self.special_blogs
+    Blog.all
+  end
+
+  def self.featured_blogs
+    Blog.limit(2)
+  end
 end
