@@ -4,8 +4,12 @@ In order to make this work like the video but without missing the rails 7 app, I
   <td><%= blog_item.title %></td>
   <td>Published <%= distance_of_time_in_words(blog_item.created_at, Time.now) %> ago</td>
   <td><%= blog_item.body %></td>
-  <td><%= link_to blog_item.status, toggle_status_blog_path(blog_item) %></td>
+  <% if logged_in?(:site_admin) %>
+    <td><%= link_to blog_item.status, toggle_status_blog_path(blog_item) %></td>
+  <% else %>
+    <td><%= blog_item.status %></td>
+  <% end %>
   <td><%= link_to 'Show', blog_item %></td>
-  <td><%= link_to 'Edit', edit_blog_path(blog_item) %></td>
-  <td><%= link_to 'Delete Post', blog_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to 'Edit', edit_blog_path(blog_item) if logged_in?(:site_admin)%></td>
+  <td><%= link_to 'Delete Post', blog_item, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%></td>
 </tr>
