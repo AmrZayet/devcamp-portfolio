@@ -18,40 +18,23 @@
 
   <body>
 
-    <!-- start of nav -->
     <%= render "shared/blog_nav" %>
-    <!-- end of nav -->
 
-    <!-- start of blog header -->
     <%= render "shared/blog_masthead" %>
-    <!-- end of blog header -->
-
-
-    <!-- start of container and row element -->
+    
     <div class="container">
-
       <div class="row">
-        <!-- start of container and row element -->
-
-
         
-
         <%= yield %>
 
-        <!-- start of sidebar -->
         <%= render "shared/blog_sidebar" %>
-        <!-- end of sidebar -->
       </div>
 
-        <!-- start of footer -->
         <%= render "shared/blog_footer" %>
-        <!-- end of footer -->
-
 
         <%= source_helper("blog") %>
 
     </div>
-    <!-- end of container -->
 
   </body>
 </html>
