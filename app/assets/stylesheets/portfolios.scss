@@ -59,10 +59,19 @@ footer p {
   margin-bottom: .25rem;
 }
 
+
+/*
+ * Custom Styles
+ */
+
 a {
   text-decoration: none;
 }
 
 .portfolio-footer-alignment {
   float: right;
+}
+
+.portfolio-form {
+  padding: 20px;
 }
