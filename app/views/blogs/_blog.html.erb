@@ -1,7 +1,7 @@
 <!-- This will replace _blog_item.html.erb from video 148 -->
 
 <div class="blog-post">
-  <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
+  <h2 class="blog-post-title"><%= link_to blog.title, blog, class: "text-decoration-none" %></h2>
   <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
 
   <% if logged_in?(:site_admin) %>
