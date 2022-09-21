@@ -1,42 +1,9 @@
- <!-- <p style="color: green"><%= notice %></p>
+ <div class="col-sm-8 blog-main">
+  
+  <%= paginate @blogs %>
 
-<h1>Blogs</h1>
+  <%= render partial: @blogs %>
 
-<div id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>  AZ-35 Why do we have render here. What does it mean. learn more later.
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
-  <% end %>
+  <%= paginate @blogs %>
+
 </div>
-
-<%= link_to "New blog", new_blog_path %> <!-- AZ-35 What is new_blog_path. What does it mean. learn more later. -->
-
-<!-- At video 70 I commented the default of Rails 7 and added the course html from Rails 5 -->
-
-
-<p id="notice"><%= notice %></p>
-
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Blog Title</th>
-      <th>Date</th>
-      <th>Body</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render partial: "blog_item", collection: @blogs %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
-
-

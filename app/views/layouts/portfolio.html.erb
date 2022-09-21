@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title><%= @page_title %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -14,14 +17,22 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    <!-- start of navigation -->
+    <%= render "shared/portfolio_nav" %>
+    <!-- end of navigation -->
 
-    <%= render "shared/nav", location: 'top' %>
 
-    <%= login_helper %>
+    <!-- start of masthead -->
+    <%= render "shared/portfolio_masthead" unless logged_in?(:site_admin) %>
+    <!-- end of masthead -->
+    
 
     <%= yield %>
+
+    <!-- start of footer -->
+    <%= render "shared/portfolio_footer" %>
+    <!-- end of footer -->
 
     <%= source_helper("application") %>
   </body>
