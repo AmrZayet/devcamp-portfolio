@@ -80,3 +80,10 @@ gem 'petergate', '~> 3.0'
 
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
+
+
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
+gem 'carrierwave-aws', '~> 1.5'
+gem 'mini_magick', '~> 4.11'
+gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
+
