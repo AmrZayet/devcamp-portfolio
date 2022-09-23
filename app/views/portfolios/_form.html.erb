@@ -15,12 +15,16 @@
 
       <br>
       <div class="form-group">
-        <%= form.file_field :main_image %>
+        <label class="btn btn-primary">
+          Upload a main image file <%= form.file_field :main_image, style: "display:none" %>
+        </label>
       </div>
 
       <br>
       <div class="form-group">
-        <%= form.file_field :thumb_image %>
+        <label class="btn btn-primary">
+          Upload a thumb image file <%= form.file_field :thumb_image, style: "display:none" %>
+        </label>
       </div>
     </div>
 
@@ -29,7 +33,7 @@
 
       <div class="form-group">
         <%= form.label :body, style: "display: block" %>
-        <%= form.text_area :body, class: "form-control", rows: 10 %>
+        <%= form.text_area :body, class: "form-control", rows: 9 %>
       </div>
 
     </div>
